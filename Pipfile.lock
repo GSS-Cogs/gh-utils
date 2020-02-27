@@ -1,0 +1,25 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "1cf57de61b0fe337b26a0c2ab88840f3b16d550aff6cc490585759a9e7685fc1"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.8"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "pygithub": {
+            "git": "https://github.com/GSS-Cogs/PyGithub.git",
+            "ref": "c8770485d7dad070128b68f7b5fcb5b5a02a3fea"
+        }
+    },
+    "develop": {}
+}

@@ -1,0 +1,12 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+pygithub = {git = "https://github.com/GSS-Cogs/PyGithub.git",ref = "timeline-project-card"}
+
+[requires]
+python_version = "3.8"
