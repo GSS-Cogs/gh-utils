@@ -17,6 +17,7 @@ def get_project(id):
     return g.get_project(id)
 
 
+events = []
 
 for family in family_repos:
     try:
@@ -43,7 +44,13 @@ for family in family_repos:
             continue
         for event in pipeline_issue.get_timeline():
             print(f'{pipeline}: {event.event} {event.created_at}')
-            if event.event in ['added_to_project', 'moved_columns_in_project']:
-                project_id = event.raw_data['project_card']['project_id']
-                column = event.raw_data['project_card']['column_name']
-                print(f'{get_project(project_id).name} - {column}')
+            events.append((event.created_at, event.raw_data))
+#            if event.event in ['added_to_project', 'moved_columns_in_project']:
+#                project_id = event.raw_data['project_card']['project_id']
+#                column = event.raw_data['project_card']['column_name']
+#                print(f'{get_project(project_id).name} - {column}')
+
+timeline = [e[1] for e in sorted(events, key=lambda x: x[0])]
+
+with open('timeline.json', 'w') as timeline_file:
+    json.dump(timeline, timeline_file)
