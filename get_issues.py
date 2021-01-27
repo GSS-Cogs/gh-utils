@@ -89,6 +89,7 @@ if __name__ == "__main__":
                 "project_name": project_board["name"],
                 "project_url": project_board["html_url"],
                 "column_name": column["name"],
+                "card_url": card["url"],
                 "archived": card["archived"],
                 "created_at": card["created_at"],
                 "updated_at": card["updated_at"]
@@ -121,6 +122,6 @@ if __name__ == "__main__":
     df.to_csv(
         out_filepath, 
         index=False,
-        columns=['project_name', 'project_url', 'column_name', 'archived', 'created_at', 'updated_at', 'notes', 
+        columns=['project_name', 'project_url', 'column_name', 'card_url', 'archived', 'created_at', 'updated_at', 'notes', 
                  'author', 'issue_url', 'repository', 'number', 'state', 'title', 'labels', 'assignee', 'locked']
     )
